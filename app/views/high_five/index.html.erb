@@ -1,1 +1,6 @@
-<h1>High Five<h1>
+<h1>High Five</h1>
+<% if current_user %>
+  Hi. <%= current_user.name %>.
+  <% else %>
+  <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path %>
+<% end %>
