@@ -1,6 +1,11 @@
-<h1>High Five</h1>
-<% if current_user %>
-  Hi. <%= current_user.name %>.
-  <% else %>
-  <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path %>
-<% end %>
+<div class="inner cover">
+  <h1 class="cover-heading">手相×恋愛相談</h1>
+  <p class="lead">手相で恋愛相談相手を見つけよう。</p>
+  <% if current_user %>
+    <p class="lead">Hi. <%= current_user.name %>.</p>
+    <% else %>
+    <p class="lead">
+      <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class:'btn btn-lg btn-secondary' %>
+    </p>
+  <% end %>
+</div>
