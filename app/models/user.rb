@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validate  :picture_size
   mount_uploader :picture, PictureUploader
   devise :rememberable, :trackable, :omniauthable, omniauth_providers: [:facebook]
 
@@ -8,6 +9,14 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.avatar = auth.info.image
+    end
+  end
+
+  private
+
+  def picture_size
+    if picture.size > 5.megabytes
+      errors.add(:picture, "should be less than 5MB")
     end
   end
 end
