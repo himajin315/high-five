@@ -9,6 +9,7 @@
     <% else %>
       <p class="lead">手相鑑定の結果までお待ち下さい。</p>
       <p class="lead">
+        <%= image_tag current_user.picture.url if current_user.picture? %>
         <%= link_to '画像を変更する', entory_path, class:'btn btn-lg btn-secondary' %>
       </p>
     <% end %>
