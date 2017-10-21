@@ -1,0 +1,23 @@
+language: ruby
+rvm:
+- 2.4.1
+test:
+  adapter: mysql2
+  database: high-five_test
+  username: travis
+  encoding: utf8
+deploy:
+  provider: heroku
+  api_key:
+    secure: H7scS1dg5hN8HCq6pGAIfRqXueG2C8Hno5kg3o0NjHlSccbTe9bpnlKmvHpeRxe8dcaqQ/38ZZqN14NFYML7efTrutehcBwaXt5d6zji1IQ4cZlrrMe5EP6UVZ7YEsv7Wx6hGbquAt0I4uhkQ/2BOMZuaVyltGuTaVXl1naLiTV6eEplRZNF6q1XUpEo7E99oF8Jnk0luJUk0Pd0MYjw1g53kVcdQsS/XyGswnULva8ruUfvXRp0K32UheI8XRnhHSuPFZ5WbAtrhyT6Ejnj3sQm0aQ9r4E+FvL+uWZTpiW0J0tUf4rgnQSikF6wP/AI2mB5CiiT3nJH9iRfvXexqLyYrTW2ZF1agIET1rkh+jwYMHkjp9WonTUSNCTNLdqxBou8ZqqDcKR/PjwI33rf/XgPJoJBHuGxx2kMr6EbFr/jFigNWsvuqFsTLhR7IWmvDngPuUjjL8CUECn6INIlaqB/k4igMyRdK1mVaGc+BlOxjz4puZhMPLLgpd2Lvu7tqRMglZhgR2WUOFJ9hW0DH4v2geC9jogS5ezPsP8z0OY0KHOEwYIYmGgn4p6GKSPCC/DBHTValTowaF+k6R/jGCWcfSiXGPPoeWg2Ph4lPBrK+OcaK/19rMUkylnF64jZqFLiOnq/OJuvFYJLN3DKT9EVu4Ro0HpTDtqZYtL1XcY=
+  app: high-five
+  on:
+    repo: himajin315/high-five
+script: bundle exec rspec spec
+services:
+  - mysql
+before_install:
+  - mysql -e 'CREATE DATABASE high-five_test;'
+before_script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
