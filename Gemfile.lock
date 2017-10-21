@@ -56,6 +56,9 @@ GEM
     autoprefixer-rails (7.1.5)
       execjs
     awesome_print (1.8.0)
+    backports (3.10.3)
+    banken (1.0.2)
+      activesupport (>= 3.0.0)
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -87,6 +90,7 @@ GEM
     coffee-script-source (1.12.2)
     commonjs (0.2.7)
     concurrent-ruby (1.0.5)
+    connection_pool (2.2.1)
     crass (1.0.2)
     database_cleaner (1.6.1)
     debug_inspector (0.0.3)
@@ -98,10 +102,19 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.3)
     erubi (1.6.1)
+    ethon (0.10.1)
+      ffi (>= 1.3.0)
     excon (0.59.0)
     execjs (2.7.0)
+    factory_girl (4.8.1)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
     faraday (0.12.2)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.12.2)
+      faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
@@ -253,10 +266,18 @@ GEM
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
     formatador (0.2.5)
+    gh (0.14.0)
+      addressable
+      backports
+      faraday (~> 0.8)
+      multi_json (~> 1.0)
+      net-http-persistent (>= 2.7)
+      net-http-pipeline
     gherkin (4.1.3)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     hashie (3.5.6)
+    highline (1.7.8)
     i18n (0.8.6)
     inflecto (0.0.2)
     ipaddress (0.8.3)
@@ -271,6 +292,8 @@ GEM
       railties (>= 3.2.16)
     json (1.8.6)
     jwt (1.5.6)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (2.8.0)
@@ -300,6 +323,9 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.0.0)
     mysql2 (0.4.9)
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
+    net-http-pipeline (1.0.1)
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
@@ -338,6 +364,9 @@ GEM
       pry (>= 0.9.11)
     public_suffix (3.0.0)
     puma (3.10.0)
+    pusher-client (0.6.2)
+      json
+      websocket (~> 1.0)
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
@@ -446,6 +475,15 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    travis (1.8.8)
+      backports
+      faraday (~> 0.9)
+      faraday_middleware (~> 0.9, >= 0.9.1)
+      gh (~> 0.13)
+      highline (~> 1.6)
+      launchy (~> 2.1)
+      pusher-client (~> 0.4)
+      typhoeus (~> 0.6, >= 0.6.8)
     trollop (2.1.2)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
@@ -458,12 +496,15 @@ GEM
       execjs (~> 2.7)
       less-rails (~> 2.8, >= 2.8.0)
       railties (~> 5.0, >= 5.0.1)
+    typhoeus (0.8.0)
+      ethon (>= 0.8.0)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
+    websocket (1.2.4)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -478,12 +519,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  banken
   bootstrap-sass
   capybara
   carrierwave
   coffee-rails (~> 4.2)
   database_cleaner
   devise
+  factory_girl_rails
   fog
   font-awesome-rails
   jbuilder
@@ -516,6 +559,7 @@ DEPENDENCIES
   sprockets-rails
   therubyracer
   thread_safe
+  travis
   turbolinks
   turnip
   twitter-bootstrap-rails

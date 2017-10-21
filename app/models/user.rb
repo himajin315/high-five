@@ -3,6 +3,8 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
   devise :rememberable, :trackable, :omniauthable, omniauth_providers: [:facebook]
 
+  enum role: [:general, :reader]
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.name = auth.info.name

@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'banken'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
@@ -42,9 +43,11 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   gem 'pry-rails'
+  gem 'travis'
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'rake'
   gem 'rspec-rails'
   gem 'capybara'
