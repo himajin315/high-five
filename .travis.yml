@@ -1,11 +1,6 @@
 language: ruby
 rvm:
 - 2.4.1
-test:
-  adapter: mysql2
-  database: high-five_test
-  username: travis
-  encoding: utf8
 deploy:
   provider: heroku
   api_key:
@@ -21,3 +16,8 @@ before_install:
 before_script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
+test:
+  adapter: mysql2
+  database: high-five_test
+  username: travis
+  encoding: utf8
