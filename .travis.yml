@@ -12,12 +12,12 @@ script: bundle exec rspec spec
 services:
   - mysql
 before_install:
-  - mysql -e 'CREATE DATABASE high-five_test;'
+  - mysql -e 'CREATE DATABASE myapp_test;'
 before_script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
+  - RAILS_ENV=test bundle exec rails db:migrate --trace
+  - bundle exec rails db:test:prepare
 test:
   adapter: mysql2
-  database: high-five_test
+  database: myapp_test
   username: travis
   encoding: utf8
