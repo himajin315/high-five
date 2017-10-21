@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [ :edit, :update, :destroy ]
 
   get '/entory', to: 'high_five#entory'
+  get '/reading', to: 'high_five#reading'
 end
