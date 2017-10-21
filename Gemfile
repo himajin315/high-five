@@ -1,12 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
+gem 'fog'
 gem "font-awesome-rails"
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'mini_magick'
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'nokogiri'
 gem 'omniauth-facebook'

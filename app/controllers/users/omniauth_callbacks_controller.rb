@@ -13,4 +13,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def failure
     redirect_to root_path, alert: 'Facebook認証に失敗しました。'
   end
+
+  def after_sign_in_path_for(resource)
+    entory_path
+  end
 end
