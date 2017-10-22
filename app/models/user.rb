@@ -3,6 +3,8 @@ class User < ApplicationRecord
   mount_uploader :picture, PictureUploader
   devise :database_authenticatable, :registerable, :validatable, :rememberable, :trackable, :omniauthable, omniauth_providers: [:facebook]
 
+  has_one :palm_information, dependent: :destroy
+
   enum role: [:general, :reader]
 
   def self.from_omniauth(auth)
