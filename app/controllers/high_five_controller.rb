@@ -1,5 +1,5 @@
 class HighFiveController < ApplicationController
-  before_action :authenticate_user!, only: [:entory, :reading]
+  before_action :authenticate, only: [:entory, :reading]
 
   def index
   end
