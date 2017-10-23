@@ -17,7 +17,7 @@ class PalmInformationController < ApplicationController
     if current_palm_information.update(palm_information_params)
       redirect_to root_path
     else
-      redirect_to entory_path
+      redirect_to entry_path
     end
   end
 

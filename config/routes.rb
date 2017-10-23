@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     resource :palm_information
   end
 
-  get '/entory', to: 'high_five#entory'
+  get '/entry', to: 'high_five#entry'
   get '/reading', to: 'high_five#reading'
 end

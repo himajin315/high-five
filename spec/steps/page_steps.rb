@@ -3,7 +3,7 @@ step 'トップページを表示する' do
 end
 
 step 'エントリーページを表示する' do
-  visit entory_path
+  visit entry_path
 end
 
 step '読み手ページを表示する' do

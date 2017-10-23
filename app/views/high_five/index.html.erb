@@ -4,13 +4,13 @@
   <% if current_user %>
     <% if current_user.picture_url.nil? %>
       <p class="lead">
-        <%= link_to '手相鑑定を依頼', entory_path, class:'btn btn-lg btn-secondary' %>
+        <%= link_to '手相鑑定を依頼', entry_path, class:'btn btn-lg btn-secondary' %>
       </p>
     <% else %>
       <p class="lead">手相鑑定の結果までお待ち下さい。</p>
       <p class="lead">
         <%= image_tag current_user.picture.url %>
-        <%= link_to '画像を変更する', entory_path, class:'btn btn-lg btn-secondary' %>
+        <%= link_to '画像を変更する', entry_path, class:'btn btn-lg btn-secondary' %>
       </p>
     <% end %>
   <% else %>

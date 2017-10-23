@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to root_path
     else
-      redirect_to entory_path
+      redirect_to entry_path
     end
   end
 
