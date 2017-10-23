@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validate  :picture_size
   mount_uploader :picture, PictureUploader
-  devise :rememberable, :trackable, :omniauthable, omniauth_providers: [:facebook]
+  devise :database_authenticatable, :registerable, :validatable, :rememberable, :trackable, :omniauthable, omniauth_providers: [:facebook]
 
   enum role: [:general, :reader]
 
