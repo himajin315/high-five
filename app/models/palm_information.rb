@@ -1,11 +1,11 @@
 class PalmInformation < ApplicationRecord
   belongs_to :user
 
-  validates :feeling_length, numericality: { only_integer: true }
-  validates :feeling_slope, numericality: { only_integer: true }
-  validates :knowledge_length, numericality: { only_integer: true }
-  validates :knowledge_slope, numericality: { only_integer: true }
-  validates :fate_slope, numericality: { only_integer: true }
+  validates :feeling_length,   numericality: { only_integer: true }, allow_nil: true
+  validates :feeling_slope,    numericality: { only_integer: true }, allow_nil: true
+  validates :knowledge_length, numericality: { only_integer: true }, allow_nil: true
+  validates :knowledge_slope,  numericality: { only_integer: true }, allow_nil: true
+  validates :fate_slope,       numericality: { only_integer: true }, allow_nil: true
 
   enum status: [:unread, :read, :reread]
 
