@@ -1,0 +1,19 @@
+<div class="inner cover">
+  <h1 class="cover-heading">手相の写真をアップロードしてください</h1>
+  <p class="lead">
+    <%= form_for([current_user, @palm_information], html: { method: :patch }) do |f| %>
+      <%= f.label :type, "感情線の長さ"%>
+      <%= render partial: "radio_button", locals: { name: "feeling_length", list: ['短い', '普通', '長い'] } %>
+      <%= f.label :type, "感情線の傾き"%>
+      <%= render partial: "radio_button", locals: { name: "feeling_slope", list: ['小さい', '普通', '大きい'] } %>
+      <%= f.label :type, "頭脳線の長さ"%>
+      <%= render partial: "radio_button", locals: { name: "knowledge_length", list: ['短い', '普通', '長い'] } %>
+      <%= f.label :type, "頭脳線の傾き"%>
+      <%= render partial: "radio_button", locals: { name: "knowledge_slope", list: ['小さい', '普通', '大きい'] } %>
+      <%= f.label :type, "運命線の傾き"%>
+      <%= render partial: "radio_button", locals: { name: "fate_slope", list: ['左側', '中央', '右側'] } %>
+
+      <%= f.submit '確認', class: 'btn btn-lg btn-primary' %>
+    <% end %>
+  </p>
+</div>
