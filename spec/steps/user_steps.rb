@@ -9,3 +9,7 @@ end
 step ':nameとしてログインしている' do |name|
   sign_in User.find_by(name: name)
 end
+
+step ':nameはログアウトする' do |name|
+  sign_out User.find_by(name: name)
+end
