@@ -10,6 +10,7 @@ class PalmInformationsController < ApplicationController
   def edit
     authorize!
 
+    @user = user
     @palm_information = current_palm_information
   end
 
@@ -35,8 +36,13 @@ class PalmInformationsController < ApplicationController
   end
 
   private
+
+  def user
+    @user ||= User.find(params[:user_id])
+  end
+
   def current_palm_information
-    @palm_information ||= PalmInformation.find(params[:user_id])
+    @palm_information ||= user.palm_information
   end
 
   def palm_information_params

@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   enum role: [:general, :reader]
 
+  scope :user_palm_information, ->(ids) { joins(:palm_information).where(palm_informations: {id: ids}) }
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.name = auth.info.name
