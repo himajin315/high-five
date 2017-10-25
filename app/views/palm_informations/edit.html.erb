@@ -1,19 +1,19 @@
 <div class="inner cover">
-  <h1 class="cover-heading">手相の写真をアップロードしてください</h1>
+  <h1 class="cover-heading"><%= image_tag current_user.picture.url %></h1>
   <p class="lead">
     <%= form_for([current_user, @palm_information], html: { method: :patch }) do |f| %>
       <%= f.label :type, "感情線の長さ"%>
-      <%= render partial: "radio_button", locals: { name: "feeling_length", list: ['短い', '普通', '長い'] } %>
+      <%= render partial: "radio_button", locals: { name: "feeling_length", list: ['短　い', '普　通', '長　い'], color: 'btn-warning' } %>
       <%= f.label :type, "感情線の傾き"%>
-      <%= render partial: "radio_button", locals: { name: "feeling_slope", list: ['小さい', '普通', '大きい'] } %>
+      <%= render partial: "radio_button", locals: { name: "feeling_slope", list: ['小さい', '普　通', '大きい'], color: 'btn-warning' } %>
       <%= f.label :type, "頭脳線の長さ"%>
-      <%= render partial: "radio_button", locals: { name: "knowledge_length", list: ['短い', '普通', '長い'] } %>
+      <%= render partial: "radio_button", locals: { name: "knowledge_length", list: ['短　い', '普　通', '長　い'], color: 'btn-info' } %>
       <%= f.label :type, "頭脳線の傾き"%>
-      <%= render partial: "radio_button", locals: { name: "knowledge_slope", list: ['小さい', '普通', '大きい'] } %>
+      <%= render partial: "radio_button", locals: { name: "knowledge_slope", list: ['小さい', '普　通', '大きい'], color: 'btn-info' } %>
       <%= f.label :type, "運命線の傾き"%>
-      <%= render partial: "radio_button", locals: { name: "fate_slope", list: ['左側', '中央', '右側'] } %>
+      <%= render partial: "radio_button", locals: { name: "fate_slope", list: ['左　側', '中　央', '右　側'], color:'btn-danger' } %>
 
-      <%= f.submit '確認', class: 'btn btn-lg btn-primary' %>
+      <%= f.submit '確定', class: 'btn btn-lg btn-primary' %>
     <% end %>
   </p>
 </div>
