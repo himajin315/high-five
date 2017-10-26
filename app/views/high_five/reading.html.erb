@@ -1,3 +1,18 @@
 <div class="inner cover">
-  <p class="lead">Reading Page</p>
+  <h3>未設定</h3>
+  <% @unread_users.each do |user|%>
+    <% unless user.picture_url.nil? %>
+      <p class="lead"><%= link_to user.name, edit_user_palm_information_path(user.id) %>, 更新日: <%= user.updated_at %></p>
+    <% end %>
+  <% end %>
+
+  <h3>再設定</h3>
+  <% @reread_users.each do |user|%>
+    <p class="lead"><%= link_to user.name, edit_user_palm_information_path(user.id) %>, 更新日: <%= user.updated_at %></p>
+  <% end %>
+
+  <h3>設定済</h3>
+  <% @read_users.each do |user|%>
+    <p class="lead"><%= user.name %>, 更新日: <%= user.updated_at %></p>
+  <% end %>
 </div>

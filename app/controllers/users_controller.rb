@@ -6,9 +6,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      PalmInformation.find_or_create_by(user: @user)
       redirect_to root_path
     else
-      redirect_to entory_path
+      redirect_to entry_path
     end
   end
 
