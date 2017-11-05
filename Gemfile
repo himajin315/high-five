@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'banken'
-gem 'bootstrap-sass'
+gem 'bootstrap'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'

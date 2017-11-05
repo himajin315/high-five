@@ -14,20 +14,19 @@
   </head>
 
   <body>
-    <section class="hero">
-      <div class="container text-center">
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
         <div class="row">
-          <div class="col-md-12">
-            <img class='hero-brand' alt="High Five Logo" src="images/HighFive.png">
+          <div class="col-lg-11 mx-auto">
+            <h1>もつれた赤い糸、ほぐしませんか</h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5"><span style="color: #BA589B">手相鑑定</span>の結果から恋愛の悩みを一緒に解決しよう</p>
+            <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class:'btn btn-primary btn-xl js-scroll-trigger' %>
           </div>
         </div>
-
-        <div class="col-md-12">
-          <h1>もつれた赤い糸、ほぐしませんか</h1>
-          <p class="tagline"><span style="color: #BA589B">手相鑑定</span>の結果から恋愛の悩みを一緒に解決しよう</p>
-          <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, class:'btn btn-full' %>
-        </div>
       </div>
-    </section>
+    </header>
   </body>
 </html>
