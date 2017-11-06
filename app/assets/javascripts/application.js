@@ -14,4 +14,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
-//= require_tree .
+//= require jquery.easing.min
+//= require scrollreveal.min
+//= require jquery.magnific-popup.min
