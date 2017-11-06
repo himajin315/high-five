@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022165441) do
+ActiveRecord::Schema.define(version: 20171106152642) do
 
   create_table "palm_informations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "status", default: 0, null: false
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171022165441) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
+    t.integer "gender", default: 0
     t.integer "role", default: 0
     t.string "encrypted_password", default: "", null: false
     t.string "avatar"
