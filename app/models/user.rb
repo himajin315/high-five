@@ -6,13 +6,15 @@ class User < ApplicationRecord
   has_one :palm_information, dependent: :destroy
 
   enum role: [:general, :reader]
+  enum gender: [:male, :female]
 
   scope :user_palm_information, ->(ids) { joins(:palm_information).where(palm_informations: {id: ids}) }
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.name = auth.info.name
-      user.email = auth.info.email
+      user.name = auth.extra.raw_info.name
+      user.email = auth.extra.raw_info.email
+      user.gender = auth.extra.raw_info.gender
       user.password = Devise.friendly_token[0,20]
       user.avatar = auth.info.image
     end
