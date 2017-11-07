@@ -57,7 +57,9 @@
             <p class="text-faded mb-4">手相により恋愛相談相手をマッチングさせます。</p>
             <p class="text-faded mb-4">手相占いをすることで「恋愛の傾向」「思考パターン」を知ることができます。</p>
             <p class="text-faded mb-4">恋愛の価値観が近い人と相談することで悩みを解決に導きます。</p>
-            <%= link_to 'Facebookではじめる', user_facebook_omniauth_authorize_path, class:'btn btn-fb btn-xl js-scroll-trigger' %>
+            <%= link_to user_facebook_omniauth_authorize_path, class:'btn btn-fb btn-xl js-scroll-trigger' do %>
+              <i class="fa fa-facebook-square"></i> Facebookではじめる
+            <% end %>
           </div>
         </div>
       </div>
