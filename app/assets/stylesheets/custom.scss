@@ -55,3 +55,14 @@ $font-family-sans-serif: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "H
     font-family: Verdana, Meiryo, sans-serif;
   }
 }
+
+.btn-fb {
+  color: #fff;
+  background-color: #4267b2;;
+  border-color: #4267b2;;
+  &:hover {
+      color: #fff;
+      background-color: #29487d;
+      border-color: #29487d;
+  }
+}
