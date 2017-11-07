@@ -2,7 +2,7 @@ class HighFiveController < ApplicationController
   before_action :authenticate, only: [:entry, :reading]
 
   def index
-    render layout: 'landing_page'
+    render layout: 'landing_page' unless current_user
   end
 
   def entry
