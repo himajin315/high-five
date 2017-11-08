@@ -107,8 +107,6 @@
         </div>
       </div>
     </section>
-    <script type="text/javascript">
-      <%= raw Rails.application.assets["creative.js"].to_s %>
-    </script>
+    <%= javascript_include_tag 'creative' %>
   </body>
 </html>
