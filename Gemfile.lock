@@ -53,7 +53,7 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     anbt-sql-formatter (0.0.5)
     arel (8.0.0)
-    autoprefixer-rails (7.1.5)
+    autoprefixer-rails (7.1.6)
       execjs
     awesome_print (1.8.0)
     backports (3.10.3)
@@ -62,9 +62,10 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+    bootstrap (4.0.0.beta2.1)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.3, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.15.4)
@@ -348,6 +349,7 @@ GEM
       capybara (~> 2.1)
       cliver (~> 0.3.1)
       websocket-driver (>= 0.2.0)
+    popper_js (1.12.5)
     pry (0.11.1)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
@@ -520,7 +522,7 @@ PLATFORMS
 
 DEPENDENCIES
   banken
-  bootstrap-sass
+  bootstrap
   capybara
   carrierwave
   coffee-rails (~> 4.2)
