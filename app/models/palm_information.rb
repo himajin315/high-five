@@ -1,12 +1,6 @@
 class PalmInformation < ApplicationRecord
   belongs_to :user
 
-  validates :feeling_length,   numericality: { only_integer: true }, allow_nil: true
-  validates :feeling_slope,    numericality: { only_integer: true }, allow_nil: true
-  validates :knowledge_length, numericality: { only_integer: true }, allow_nil: true
-  validates :knowledge_slope,  numericality: { only_integer: true }, allow_nil: true
-  validates :fate_slope,       numericality: { only_integer: true }, allow_nil: true
-
   enum status:           [:unread, :read, :reread]
   enum feeling_length:   [:feeling_length_short, :feeling_length_normal, :feeling_length_long]
   enum feeling_slope:    [:feeling_slope_middle, :feeling_slope_center, :feeling_slope_index]
