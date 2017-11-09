@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106152642) do
+ActiveRecord::Schema.define(version: 20171109172014) do
 
   create_table "palm_informations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "status", default: 0, null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20171106152642) do
     t.integer "knowledge_length"
     t.integer "knowledge_slope"
     t.integer "fate_slope"
+    t.boolean "masukake", default: false, null: false
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

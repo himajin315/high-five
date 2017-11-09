@@ -1,19 +1,42 @@
-<div class="inner cover">
-  <h1 class="cover-heading"><%= image_tag @user.picture.url, style: 'height: 200px' %></h1>
-  <p class="lead">
-    <%= form_for([@user, @palm_information], html: { method: :patch }) do |f| %>
-      <%= f.label :type, "感情線の長さ"%>
-      <%= render partial: "radio_button", locals: { name: "feeling_length", list: ['感:短　い', '感:普　通', '感:長　い'], color: 'btn-warning' } %>
-      <%= f.label :type, "感情線の傾き"%>
-      <%= render partial: "radio_button", locals: { name: "feeling_slope", list: ['感:小さい', '感:普　通', '感:大きい'], color: 'btn-warning' } %>
-      <%= f.label :type, "頭脳線の長さ"%>
-      <%= render partial: "radio_button", locals: { name: "knowledge_length", list: ['頭:短　い', '頭:普　通', '頭:長　い'], color: 'btn-info' } %>
-      <%= f.label :type, "頭脳線の傾き"%>
-      <%= render partial: "radio_button", locals: { name: "knowledge_slope", list: ['頭:小さい', '頭:普　通', '頭:大きい'], color: 'btn-info' } %>
-      <%= f.label :type, "運命線の傾き"%>
-      <%= render partial: "radio_button", locals: { name: "fate_slope", list: ['運:左　側', '運:中　央', '運:右　側'], color:'btn-danger' } %>
+<div id='reading'>
+  <div class="row">
+    <div class="col-lg-8 mx-auto text-center">
+      <%= image_tag @user.picture.url, class: 'mg-fluid' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 mx-auto text-center">
+      <%= form_for([@user, @palm_information], html: { method: :patch }) do |f| %>
+      <%= f.label :type, "ますかけ線"%>
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-secondary btn-lg" id='masukake'>
+          <input class="btn btn-secondary btn-lg" name='masukake' type='radio' value=true>
+          ある
+        </label>
+        <label class="btn btn-secondary btn-lg" id='masukake'>
+          <input class="btn btn-secondary btn-lg" name='masukake' type='radio' value=false>
+          なし
+        </label>
+      </div>
+      <br>
 
-      <%= f.submit '確定', class: 'btn btn-lg btn-primary' %>
-    <% end %>
-  </p>
+      <%= f.label :type, "感情線の長さ"%>
+      <%= render partial: "radio_button", locals: { name: "feeling_length", list: ['感:短　い', '感:普　通', '感:長　い'], enum: ['feeling_length_short', 'feeling_length_normal', 'feeling_length_long'], color: 'btn-warning' } %>
+
+      <%= f.label :type, "感情線の傾き"%>
+      <%= render partial: "radio_button", locals: { name: "feeling_slope", list: ['感:中　指', '感:中　央', '感:人差し指'], enum: ['feeling_slope_middle', 'feeling_slope_center', 'feeling_slope_index'],color: 'btn-warning' } %>
+
+      <%= f.label :type, "頭脳線の長さ"%>
+      <%= render partial: "radio_button", locals: { name: "knowledge_length", list: ['頭:短　い', '頭:普　通', '頭:長　い'], enum: ['knowledge_length_short', 'knowledge_length_normal', 'knowledge_length_long'], color: 'btn-info' } %>
+
+      <%= f.label :type, "頭脳線の傾き"%>
+      <%= render partial: "radio_button", locals: { name: "knowledge_slope", list: ['頭:真っ直ぐ', '頭:真ん中', '頭:下向き'], enum:  ['knowledge_slope_straight', 'knowledge_slope_center', 'knowledge_slope_down'], color: 'btn-info' } %>
+
+      <%= f.label :type, "運命線の傾き"%>
+      <%= render partial: "radio_button", locals: { name: "fate_slope", list: ['運:左　側', '運:中　央', '運:右　側'], enum: ['fate_slope_left', 'fate_slope_center', 'fate_right'], color:'btn-danger' } %>
+
+      <%= f.submit '確　定', class: 'btn btn-lg btn-primary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
